@@ -1,0 +1,5 @@
+pyzmq
+opencv-python
+numpy
+pyaudio
+pillow
