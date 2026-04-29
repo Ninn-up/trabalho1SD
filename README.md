@@ -36,7 +36,7 @@ O sistema é dividido em três componentes principais:
 Para rodar tudo no seu próprio computador e testar a comunicação local, instale as dependências com `pip install -r requirements.txt` e abra diferentes abas do terminal.
 
 
-No Ubuntu ou no **MacOs** pode ser necessário instalar o `PortAudio` antes de realizar a instalação das dependências. (adicionar)
+No **Ubuntu** e no **MacOs** pode ser necessário instalar o `PortAudio` antes de realizar a instalação das dependências. 
 
 **1. Em um terminal, inicie o Registry (catálogo)**
 ```bash
