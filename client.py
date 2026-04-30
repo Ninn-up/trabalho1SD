@@ -292,7 +292,9 @@ class VideoConferenceClient:
                 print(f"\n[Client] Text retry {3 - retries}/3...")
         
         print("\n[Client] Broker off-line! Procurando outro broker...")
-        self.discover_and_connect()
+        if self.discover_and_connect():
+            print("[Client] Reenviando mensagem...")
+            self.send_text(text)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
