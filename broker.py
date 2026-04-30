@@ -115,9 +115,13 @@ class Broker:
     def update_cluster_connections(self, cluster_list):
         current_peers = {peer["id"]: peer["cluster_endpoint"]["pub"] for peer in cluster_list}
         peer_ids = set(current_peers.keys())
-        
+        my_cluster_endpoint = f"tcp://{self.host}:{self.cluster_pub_port}"
+
+
         for new_peer in peer_ids - self.cluster_peers:
             endpoint = current_peers[new_peer]
+            if endpoint == my_cluster_endpoint:
+                continue
             print(f"[Broker] Connecting to cluster peer {new_peer} at {endpoint}")
             self.cluster_sub.connect(endpoint)
             self.cluster_peers.add(new_peer)
